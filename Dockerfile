@@ -26,9 +26,9 @@ RUN apt-get update -y && \
 		wx-common \
 		libogdi-dev \
 		unixodbc-dev && \
-	apt-get -y clean 
-# INSTALL SAGA
-RUN	mkdir /home/saga && \
+	apt-get -y clean  && \
+	mkdir /home/saga && \
+	rm -rf /var/lib/apt/lists/* && \
 	cd /home/saga && \
 	git clone git://git.code.sf.net/p/saga-gis/code saga-gis-code && \
 	cd /home/saga/saga-gis-code/saga-gis && \
@@ -36,5 +36,6 @@ RUN	mkdir /home/saga && \
 	./configure &&\
 	make -j 2 && \
 	make install && \
-	ldconfig
+	ldconfig && \
+        rm -rf /home/saga/saga-gis-code
 CMD ["/bin/bash"]
