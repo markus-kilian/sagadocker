@@ -1,4 +1,5 @@
 This container based on Ubuntu:latest and SAGA GIS. see http://www.saga-gis.org/en/index.html
+In additon a python environment is implemented to ensure saga-python compatibility.
 
 The installation and compiling based on: https://sourceforge.net/p/saga-gis/wiki/Compiling%20SAGA%20on%20Linux/
 
